@@ -35,7 +35,7 @@ namespace lazy_thrust
 
     template < class range >
     auto make_lazy(range &r)
-        RETURN(make_lazy(r.begin(), r.end()))
+        RETURN(make_lazy(std::begin(r), std::begin(r)))
 
     template < class iterator_ >
     class lazy
@@ -44,9 +44,6 @@ namespace lazy_thrust
     public:
         typedef iterator_ iterator;
         typedef std::pair<iterator, iterator> base;
-
-        template < class range >
-        explicit lazy(range &r) : base(r.begin(), r.end()) {}
 
         template < class iterator >
         explicit lazy(iterator first, iterator last) : base(first, last) {}
