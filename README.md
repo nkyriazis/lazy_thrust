@@ -1,2 +1,3 @@
 # lazy_thrust
-Facilitation of lazy evaluated expressions over iterator ranges
+
+Easily compose operations on ranges of values. The evaluation is delayed, thus the name "lazy".
